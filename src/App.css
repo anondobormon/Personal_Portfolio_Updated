@@ -1,38 +1,410 @@
-.App {
-  text-align: center;
+.primary-color {
+  color: #ff0d41;
+}
+.primary-bg {
+  background: #ff0d41;
+  transition: 0.5s;
+}
+.bg-bg {
+  background: #333333;
+}
+.black-bg {
+  background: #2a2a2a;
+}
+.black-color {
+  color: #2a2a2a;
+}
+.secondary-bg {
+  background: #c8002b;
+}
+.primary-bg:hover {
+  background: #c8002b;
+}
+.p-border-b {
+  border-bottom: 2px solid #ff0d41;
+}
+.zindex-1000 {
+  z-index: 1000;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.section-border {
+  border-top: 3px solid #2a2a2a;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Header section */
+.header-bg {
+  position: relative;
 }
-
-.App-header {
-  background-color: #282c34;
+.header-height {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.header-bg::after {
+  content: "";
+  position: absolute;
+  height: 170%;
+  width: 75%;
+  border-radius: 50%;
+  top: -63%;
+  right: -25%;
+  background: #ff0d41;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (max-width: 768px) {
+  .header-bg::after {
+    background: transparent;
   }
-  to {
-    transform: rotate(360deg);
+}
+/* For service card */
+
+.main {
+  width: 100%;
+  min-height: 400px;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+  color: #ff0d41;
+}
+.service {
+  background: #2a2a2a;
+  padding: 30px;
+  border-radius: 10px;
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  box-shadow: 0 0 20px -15px #181818;
+  transition: transform 0.8s;
+
+  transition: 0.8s;
+}
+.service-logo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: -110px auto 0;
+  background: #2a2a2a;
+  border: 18px solid #333333;
+  transition: 0.5s;
+}
+.service-logo .img {
+  transition: transform 1s;
+}
+.service h4 {
+  height: 35px;
+  width: 80%;
+  background: #2a2a2a;
+  margin: 50px auto 0;
+  position: relative;
+  transition: 0.5s;
+}
+.main:hover .service h4 {
+  background: #ff0d41;
+}
+.service h4::after {
+  content: "";
+  width: 40px;
+  height: 30px;
+  background: linear-gradient(to right, #141414, #ff0d41);
+  position: absolute;
+  right: -5px;
+  top: -5px;
+  z-index: -1;
+}
+.service h4::before {
+  content: "";
+  width: 40px;
+  height: 30px;
+  background: linear-gradient(to right, #ff0d41, #141414);
+  position: absolute;
+  left: -5px;
+  bottom: -5px;
+  z-index: -1;
+}
+
+/* .shadowOne {
+  height: 200px;
+  width: 80%;
+  background: #fff;
+  position: absolute;
+  border-radius: 10px;
+  bottom: 0;
+  left: 10%;
+  z-index: -1;
+}
+.shadowTwo {
+  height: 200px;
+  width: 64%;
+  background: #fff;
+  position: absolute;
+  border-radius: 10px;
+  bottom: 0;
+  left: 18%;
+  z-index: -2;
+} */
+.main:hover .service {
+  transform: translateY(-15px);
+  background: #ff0d41;
+  color: #181818;
+}
+.main:hover .service-logo {
+  background: #ff0d41;
+  color: #141414 !important;
+}
+.main:hover .img {
+  transform: rotate(360deg);
+}
+/* .main:hover .shadowOne {
+  transform: translateY(-25px);
+} */
+
+/* Experience section */
+
+/* Progress bar-1 */
+.progress-1 {
+  background: #141414;
+  position: relative;
+}
+.progress-1::before {
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(to right, #141414, #ff0d41);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  animation: progres1 1.5s normal forwards;
+}
+@keyframes progres1 {
+  0% {
+    width: 0%;
   }
+  100% {
+    width: 90%;
+  }
+}
+
+/* Progress bar-2 */
+.progress-2 {
+  background: #141414;
+  position: relative;
+}
+
+.progress-2::before {
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(to right, #141414, #ff0d41);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  animation: progres2 1.5s normal forwards;
+}
+@keyframes progres2 {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 85%;
+  }
+}
+
+/* Progress bar-3 */
+.progress-3 {
+  background: #141414;
+  position: relative;
+}
+
+.progress-3::before {
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(to right, #141414, #ff0d41);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  animation: progres3 1.5s normal forwards;
+}
+@keyframes progres3 {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 95%;
+  }
+}
+
+/* Progress bar-4 */
+.progress-4 {
+  background: #141414;
+  position: relative;
+}
+
+.progress-4::before {
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(to right, #141414, #ff0d41);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  animation: progres4 1.5s normal forwards;
+}
+@keyframes progres4 {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 95%;
+  }
+}
+
+/* Progress bar-5 */
+.progress-5 {
+  background: #141414;
+  position: relative;
+}
+
+.progress-5::before {
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(to right, #141414, #ff0d41);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  animation: progres5 1.5s normal forwards;
+}
+@keyframes progres5 {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 80%;
+  }
+}
+/* Progress bar-6 */
+.progress-6 {
+  background: #141414;
+  position: relative;
+}
+
+.progress-6::before {
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(to right, #141414, #ff0d41);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  animation: progres6 1.5s normal forwards;
+}
+@keyframes progres6 {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 90%;
+  }
+}
+
+/* Portfolio section  */
+
+/* .portfolio-image {
+  width: 100%;
+  transition: transform 0.1s ease-in-out;
+  transform-origin: center;
+  transform: scale(1);
+  z-index: 1;
+}
+.portfolio-image:hover {
+  transform: scale(1.2);
+} */
+
+.portfolio-card {
+  position: relative;
+}
+.code-link {
+  transition: transform 0.7s ease-in-out;
+  transform-origin: center;
+  transform: scale(0);
+}
+.portfolio-card::before {
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;
+  background: #000000;
+  position: absolute;
+  border-radius: 10px;
+  transition: transform 0.7s ease-in-out;
+  transform-origin: center;
+  transform: scale(0);
+}
+.portfolio:hover .portfolio-card::before {
+  transform: scale(1);
+}
+.portfolio:hover .code-link {
+  transform: scale(1);
+}
+.portfolio-title {
+  bottom: 0;
+  margin-bottom: 5px;
+  position: absolute;
+}
+
+/* Navbar.portfolio- */
+
+.navbar {
+  background: transparent;
+  position: absolute;
+  z-index: 11111;
+}
+.nav-menu {
+  color: #141414;
+}
+.nav-menu li {
+  margin: 0 10px;
+  font-weight: 400;
+}
+/* .mobile {
+  transition: 1s;
+} */
+.mobile-menu {
+  transform: scaleX(0);
+  border: 1px solid black;
+  transition: transform 0.5s ease-in-out;
+  transform-origin: left;
+}
+.mobile-sidebar {
+  position: absolute;
+  opacity: 0.9;
+  background: #141414;
+  top: 0;
+}
+.mobile-menu1 {
+  transform: scaleX(1);
+  transition: transform 0.5s ease-in-out;
+  transform-origin: left;
+}
+.sticky-nav {
+  position: fixed;
+  background: #ff0d41;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  transition: 0.5s linear;
+  z-index: 11111111;
 }
